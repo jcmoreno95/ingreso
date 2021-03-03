@@ -1,0 +1,10 @@
+switch(eclinico){
+			case "enfermo": 
+			  contadorenfermos ++;
+			  break;
+			case "internado": 
+			  contadorinternado ++;
+			  break;
+			case "adopcion": 
+			  contadoradopcion ++;
+			  break;}
