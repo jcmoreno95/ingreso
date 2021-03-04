@@ -1,0 +1,74 @@
+function mostrar()
+{
+	var nombre;
+	var estadocivil;
+	var edad;
+	var respuesta="si";
+	var edad;
+	var edadpar;
+	var confirmacion;
+	var temperaturacorporal;
+	var temperaturacorporalpar;
+	var contadorviudomayores;
+	var flagprimersolterajoven=0;
+	var nombresolterajoven;
+	var edadsolterajoven;
+
+
+	do{ 
+    
+		nombre = prompt("Ingrese Nombre"); 
+		
+		do{
+			estadocivil = prompt("Introduzca  estadocivil valido (soltero, casado o viudo)");}
+	    while(estadocivil != "soltero" &&  estadocivil != "casado" && estadocivil !="viudo");
+
+	    do{
+			edad = prompt("Ingrese edad valida");
+			edad=parseInt(edadpar);
+           }
+		while(edadpar<17);
+        
+		do{
+			sexo = prompt("Introduzca  sexo  valido (femenino, masculino o no binario)");}
+		while( sexo != "femenino" &&  sexo != "masculino" && sexo !="no binario");
+
+		do{
+			var temperaturacorporal= prompt("Introduzca temperatura corporal");
+			   temperaturacorporalpar = parseInt(temperaturacorporal);
+			   confirmacion = isNaN(temperaturacorporalpar);}
+		while(confirmacion===true);
+
+        if(estadocivil=="viudo" && edadpar>60){ 
+        contadorviudomayores++;}
+
+		if(flagprimersolterajoven==0 && sexo!=="femenino" && estadocivil=="soltero"){  
+			nombresolterajoven=nombre;
+			edadsolterajoven=edadpar;
+			flagprimersolterajoven=1;
+		}
+			  
+		if(flagprimersolterajoven==1 && sexo!=="femenino" && estadocivil=="soltero"&& edadpar<edadsolterajoven){  
+			nombresolterajoven=nombre;
+			edadsolterajoven=edadpar;
+			flagprimersolterajoven=1;
+		}
+
+	
+	}
+    while(respuesta=="si");
+
+
+
+	document.write("la cantidad de viudos de mas de 60 es " + contadorviudomayores+". La soltera mas joven es "+ edadsolterajoven + "y su nombre es "+ nombresolterajoven);
+
+
+
+
+
+
+
+
+
+
+}
